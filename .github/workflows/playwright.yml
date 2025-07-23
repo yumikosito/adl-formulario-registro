@@ -14,22 +14,22 @@ jobs:
               with:
                 node-version: '20'
 
-            - name: Bajar el código
+            - name: Bajar código
               uses: actions/checkout@v4
 
-            - name: Instalar las dependencias
+            - name: Instalar dependencias
               run: npm ci
 
-            - name: Instala los browsers
+            - name: Instala los chromium
               run: npx playwright install chromium --with-deps
               
-            - name: Levantamos la aplicación
+            - name: Levantamos aplicación
               run: npm run dev &
 
-            - name: Ejecuta los test
+            - name: Ejecuta test
               run: npx playwright test
 
-            - name: Sube el reporte al repositorio
+            - name: Sube el reporte
               uses: actions/upload-artifact@v4
               with:
                 name: report-test
