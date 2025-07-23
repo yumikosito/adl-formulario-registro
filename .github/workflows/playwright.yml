@@ -20,7 +20,7 @@ jobs:
             - name: Instalar dependencias
               run: npm ci
 
-            - name: Instala los chromium
+            - name: Instala chromium
               run: npx playwright install chromium --with-deps
               
             - name: Levantamos aplicación
